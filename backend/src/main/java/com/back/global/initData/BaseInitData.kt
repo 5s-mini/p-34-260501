@@ -2,6 +2,7 @@ package com.back.global.initData
 
 import com.back.domain.member.service.MemberService
 import com.back.domain.post.post.service.PostService
+import com.back.global.extentions.getOrThrow
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Lazy
 import org.springframework.transaction.annotation.Transactional
+
 
 @Configuration
 class BaseInitData(
@@ -33,8 +35,8 @@ class BaseInitData(
             return
         }
 
-        val author1 = memberService.findByUsername("user1").get()
-        val author2 = memberService.findByUsername("user2").get()
+        val author1 = memberService.findByUsername("user1").getOrThrow()
+        val author2 = memberService.findByUsername("user2").getOrThrow()
 
         val post1 = postService.write(author1, "제목1", "내용1")
         val post2 = postService.write(author1, "제목2", "내용2")

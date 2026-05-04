@@ -3,6 +3,7 @@ package com.back.domain.post.post.controller
 import com.back.domain.post.post.dto.PostDto
 import com.back.domain.post.post.entity.Post
 import com.back.domain.post.post.service.PostService
+import com.back.global.extentions.getOrThrow
 import com.back.global.rq.Rq
 import com.back.global.rsData.RsData
 import io.swagger.v3.oas.annotations.Operation
@@ -38,7 +39,7 @@ class ApiV1PostController(
     @GetMapping("/{id}")
     @Operation(summary = "글 단건 조회")
     fun detail(@PathVariable id: Int): PostDto {
-        val post = postService.findById(id).get()
+        val post = postService.findById(id).getOrThrow()
         return PostDto(post)
     }
 
@@ -78,6 +79,7 @@ class ApiV1PostController(
         )
     }
 
+
     data class PostModifyReqBody(
         val title: @Size(
             min = 2,
@@ -105,7 +107,7 @@ class ApiV1PostController(
     ): RsData<PostModifyResBody> {
         val actor = rq.actor // 인증된 사용자 정보 가져오기
 
-        val post = postService.findById(id).get()
+        val post = postService.findById(id).getOrThrow()
         post.checkModify(actor)
 
         postService.modify(id, reqBody.title, reqBody.content)
@@ -127,7 +129,7 @@ class ApiV1PostController(
     ): RsData<Void?> {
         val actor = rq.actor // 인증된 사용자 정보 가져오기
 
-        val post = postService.findById(id).get()
+        val post = postService.findById(id).getOrThrow()
         println(post.author.id)
         post.checkDelete(actor)
 

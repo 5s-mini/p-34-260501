@@ -100,7 +100,7 @@ public class ApiV1MemberController {
         Member tmpActor = rq.getActor(); // user1 정보
 
         // 내 전체 회원 정보 조회가 목적
-        Member realActor = memberService.findById(tmpActor.getId()).get();
+        Member realActor = memberService.findById(tmpActor.id).get();
 
         return new MemberDto(realActor);
 

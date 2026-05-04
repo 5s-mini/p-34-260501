@@ -20,7 +20,7 @@ class AuthTokenService {
                 secretKey,
                 expireTime,
                 Map.of(
-                        "id", member.getId(),
+                        "id", member.id,
                         "username", member.getUsername(),
                         "nickname", member.getNickname()
                 )

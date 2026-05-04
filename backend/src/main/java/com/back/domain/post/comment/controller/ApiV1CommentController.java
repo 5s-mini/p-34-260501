@@ -33,7 +33,7 @@ public class ApiV1CommentController {
             @PathVariable int postId
     ) {
         Post post = postService.findById(postId).get();
-        List<Comment> comments = post.getComments();
+        List<Comment> comments = post.comments;
 
         List<CommentDto> commentDtoList = comments.reversed().stream()
                 .map(CommentDto::new)
@@ -80,7 +80,7 @@ public class ApiV1CommentController {
         postService.flush();
 
         return new RsData<>(
-                "%d번 댓글이 생성되었습니다.".formatted(comment.getId()),
+                "%d번 댓글이 생성되었습니다.".formatted(comment.id),
                 "201-1",
                 new CommentWriteResBody(
                         new CommentDto(comment),

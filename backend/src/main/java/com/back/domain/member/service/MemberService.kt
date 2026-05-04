@@ -25,7 +25,7 @@ class MemberService(
         apiKey: String = UUID.randomUUID().toString()
     ): Member {
         findByUsername(username)?.let {
-            throw ServiceException("409-1", "이미 존재하는 아이디입니다.")
+            throw ServiceException("409-1", "이미 사용중인 아이디입니다.")
         }
 
         val member = Member(username, passwordEncoder.encode(password)!!, nickname, apiKey)

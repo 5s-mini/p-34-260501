@@ -54,7 +54,7 @@ public class ApiV1CommentControllerTest {
 
         resultActions
                 .andExpect(jsonPath("$.length()").value(3))
-                .andExpect(jsonPath("$[*].id", containsInRelativeOrder(3, 1)))
+                .andExpect(<Iterable<? extends Integer>>jsonPath("$[*].id", <Integer>containsInRelativeOrder(3, 1)))
                 .andExpect(jsonPath("$[0].id").value(3))
                 .andExpect(jsonPath("$[0].createDate").exists())
                 .andExpect(jsonPath("$[0].modifyDate").exists())
@@ -181,7 +181,7 @@ public class ApiV1CommentControllerTest {
         // 선택적 검증
         Post post = postRepository.findById(targetPostId).orElse(null);
         Comment comment = post.findCommentById(targetCommentId).orElse(null);
-        assertThat(comment).isNull();
+        <Comment>assertThat(comment).isNull();
     }
 
     @Test

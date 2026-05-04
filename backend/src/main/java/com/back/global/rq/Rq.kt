@@ -6,7 +6,6 @@ import com.back.global.security.SecurityUser
 import jakarta.servlet.http.Cookie
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import lombok.RequiredArgsConstructor
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Component
 
@@ -37,8 +36,8 @@ class Rq(
     fun getHeader(name: String, defaultValue: String): String = request.getHeader(name) ?: defaultValue
 
     fun getCookieValue(name: String, defaultValue: String): String = request
-        .cookies
-        .firstOrNull { it.name == name }
+        ?.cookies
+        ?.firstOrNull { it.name == name }
         ?.value
         ?.takeIf { it.isNotBlank() }
         ?: defaultValue

@@ -51,7 +51,7 @@ class ApiV1CommentController(
             min = 2,
             max = 100,
             message = "04-content-내용은 2자 이상 100자 이하로 입력해주세요."
-        ) String?
+        ) String
     )
 
     @JvmRecord
@@ -66,7 +66,7 @@ class ApiV1CommentController(
     fun write(
         @PathVariable postId: Int,
         @RequestBody @Valid reqBody: @Valid CommentWriteReqBody
-    ): RsData<CommentWriteResBody?> {
+    ): RsData<CommentWriteResBody> {
         val actor = rq.actor
         val post = postService.findById(postId).get()
         val comment = post.addComment(actor, reqBody.content!!)

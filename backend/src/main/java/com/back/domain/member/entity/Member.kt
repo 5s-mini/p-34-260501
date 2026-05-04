@@ -15,11 +15,12 @@ class Member(
     var nickname: String,
     @Column(unique = true)
     var apiKey: String
-) : BaseEntity() {
+) : BaseEntity(0) {
 
     constructor(id: Int, username: String, nickname: String)
             : this(username, "", nickname, "") {
-        this.setId(id)
+
+        this.id = id
         this.username = username
         this.nickname = nickname
     }

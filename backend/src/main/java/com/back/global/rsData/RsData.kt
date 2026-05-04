@@ -18,7 +18,4 @@ data class RsData<T>(
             .toTypedArray()[0]
             .toInt()
 
-//    fun getStatusCode(): Int {
-//        return resultCode!!.split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0].toInt()
-//    }
 }

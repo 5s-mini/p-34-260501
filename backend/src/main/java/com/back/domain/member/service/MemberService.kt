@@ -18,7 +18,6 @@ class MemberService(
     @Autowired
     private lateinit var authTokenService: AuthTokenService
 
-    @JvmOverloads
     fun join(
         username: String,
         password: String,

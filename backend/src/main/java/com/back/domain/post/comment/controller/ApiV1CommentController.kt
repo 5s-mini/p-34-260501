@@ -42,8 +42,6 @@ class ApiV1CommentController(
         return CommentDto(comment)
     }
 
-
-    @JvmRecord
     data class CommentWriteReqBody(
         val content: @NotBlank(message = "02-content-내용은 필수입니다.") @Size(
             min = 2,
@@ -52,7 +50,6 @@ class ApiV1CommentController(
         ) String
     )
 
-    @JvmRecord
     data class CommentWriteResBody(
         val commentDto: CommentDto?,
         val totalCount: Int
@@ -103,7 +100,6 @@ class ApiV1CommentController(
         )
     }
 
-    @JvmRecord
     data class CommentModifyReqBody(
         val content: String
     )

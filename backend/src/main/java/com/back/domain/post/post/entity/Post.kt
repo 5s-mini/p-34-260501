@@ -2,7 +2,6 @@ package com.back.domain.post.post.entity
 
 import com.back.domain.member.entity.Member
 import com.back.domain.post.comment.entity.Comment
-import com.back.global.entity.BaseEntity
 import com.back.global.exception.ServiceException
 import jakarta.persistence.*
 import lombok.AllArgsConstructor

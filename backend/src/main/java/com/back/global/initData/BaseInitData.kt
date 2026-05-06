@@ -2,7 +2,7 @@ package com.back.global.initData
 
 import com.back.domain.member.service.MemberService
 import com.back.domain.post.post.service.PostService
-import com.back.global.extentions.getOrThrow
+import com.back.global.extenstions.getOrThrow
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner

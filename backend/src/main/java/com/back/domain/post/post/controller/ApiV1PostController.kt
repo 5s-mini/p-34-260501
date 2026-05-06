@@ -3,7 +3,7 @@ package com.back.domain.post.post.controller
 import com.back.domain.post.post.dto.PostDto
 import com.back.domain.post.post.entity.Post
 import com.back.domain.post.post.service.PostService
-import com.back.global.extentions.getOrThrow
+import com.back.global.extenstions.getOrThrow
 import com.back.global.rq.Rq
 import com.back.global.rsData.RsData
 import io.swagger.v3.oas.annotations.Operation

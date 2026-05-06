@@ -2,7 +2,7 @@ package com.back.domain.member.controller
 
 import com.back.domain.member.entity.Member
 import com.back.domain.member.repository.MemberRepository
-import com.back.global.extentions.getOrThrow
+import com.back.global.extenstions.getOrThrow
 import org.hamcrest.Matchers
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test

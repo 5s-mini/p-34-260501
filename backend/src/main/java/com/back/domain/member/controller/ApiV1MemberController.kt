@@ -4,7 +4,7 @@ import com.back.domain.member.dto.MemberDto
 import com.back.domain.member.entity.Member
 import com.back.domain.member.service.MemberService
 import com.back.global.exception.ServiceException
-import com.back.global.extentions.getOrThrow
+import com.back.global.extenstions.getOrThrow
 import com.back.global.rq.Rq
 import com.back.global.rsData.RsData
 import jakarta.validation.Valid

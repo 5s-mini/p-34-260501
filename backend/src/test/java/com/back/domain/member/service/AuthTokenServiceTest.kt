@@ -2,7 +2,7 @@ package com.back.domain.member.service
 
 import com.back.domain.member.entity.Member
 import com.back.domain.member.repository.MemberRepository
-import com.back.global.extentions.getOrThrow
+import com.back.global.extenstions.getOrThrow
 import com.back.standard.ut.Ut
 import com.back.standard.ut.Ut.jwt.isValid
 import com.back.standard.ut.Ut.jwt.payloadOrNull
